@@ -16,9 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from .yasg import urlpatterns as swag_url
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('__debug__/', include('debug_toolbar.urls')),
     path('', include('main.urls')),
     path('api/v1/', include('main.urlsAPI')),
 ]
+urlpatterns += swag_url
