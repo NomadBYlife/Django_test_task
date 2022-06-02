@@ -14,7 +14,7 @@
 </form>
 {#{% for res in results %}#}
 {#    {% for i in res.credit.all %}#}
-{#        уникальный ID производителя({{ i.manufacturer.title }}): {{ i.manufacturer.id | dictsort:"id"  }}<br>#}
+{#        уникальный ID производителя: {{ i.manufacturer.id | dictsort:"id"  }}<br>#}
 {#    {% endfor %}#}
 {#{% endfor %}#}
 Уникальные ID производителей:

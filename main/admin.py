@@ -1,9 +1,9 @@
 from django.contrib import admin
 
-from .models import CreditApplication, Contract, Product, Manufacturer
+from .models import Credit, Contract, Product, Manufacturer
 
 
-@admin.register(CreditApplication)
+@admin.register(Credit)
 class CreditApplicationAdmin(admin.ModelAdmin):
     """Кредитная заявка"""
     list_display = ('id', 'contract', 'date')

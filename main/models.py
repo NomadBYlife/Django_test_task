@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class CreditApplication(models.Model):
+class Credit(models.Model):
     """Кредитная заявка"""
     contract = models.OneToOneField('Contract', on_delete=models.CASCADE, related_name='contract',
                                     verbose_name='контракт')
@@ -31,8 +31,8 @@ class Product(models.Model):
     title = models.CharField(max_length=255, verbose_name='название')
     manufacturer = models.ForeignKey('Manufacturer', on_delete=models.CASCADE, related_name='manufacturer',
                                      verbose_name='производитель')
-    credit = models.ForeignKey(CreditApplication, on_delete=models.CASCADE, related_name='credit',
-                                verbose_name='заявка')
+    credit = models.ForeignKey(Credit, on_delete=models.CASCADE, related_name='credit',
+                               verbose_name='заявка')
     date = models.DateTimeField(auto_now_add=True, verbose_name='дата создания')
 
     class Meta:
