@@ -8,6 +8,7 @@ from .models import Product, Credit
 
 class MainView(views.View):
     """Главная вью"""
+
     def get(self, request, *args, **kwargs):
         form = FormForID()
         context = {

@@ -13,7 +13,6 @@ class CreditViewSet(viewsets.ModelViewSet):
     permission_classes = (IsAuthenticatedOrReadOnly,)
 
 
-
 class ContractViewSet(viewsets.ModelViewSet):
     """API для контрактов"""
     queryset = Contract.objects.all()
@@ -34,4 +33,3 @@ class ManufacturerViewSet(viewsets.ModelViewSet):
     queryset = Manufacturer.objects.all()
     serializer_class = ManufacturerSerializer
     permission_classes = (IsAuthenticatedOrReadOnly,)
-

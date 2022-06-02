@@ -6,6 +6,7 @@ class Credit(models.Model):
     contract = models.OneToOneField('Contract', on_delete=models.CASCADE, related_name='contract',
                                     verbose_name='контракт')
     date = models.DateTimeField(auto_now_add=True, verbose_name='дата создания')
+
     class Meta:
         verbose_name = 'Заявку'
         verbose_name_plural = 'Заявки'
