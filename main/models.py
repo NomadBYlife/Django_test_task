@@ -3,10 +3,9 @@ from django.db import models
 
 class CreditApplication(models.Model):
     """Кредитная заявка"""
-    contract = models.OneToOneField("Contract", on_delete=models.CASCADE, related_name='contract',
+    contract = models.OneToOneField('Contract', on_delete=models.CASCADE, related_name='contract',
                                     verbose_name='контракт')
     date = models.DateTimeField(auto_now_add=True, verbose_name='дата создания')
-
     class Meta:
         verbose_name = 'Заявку'
         verbose_name_plural = 'Заявки'
@@ -30,10 +29,10 @@ class Contract(models.Model):
 class Product(models.Model):
     """Товар"""
     title = models.CharField(max_length=255, verbose_name='название')
-    credit = models.ForeignKey(CreditApplication, on_delete=models.CASCADE, related_name='credit',
-                               verbose_name='кредитная заявка')
     manufacturer = models.ForeignKey('Manufacturer', on_delete=models.CASCADE, related_name='manufacturer',
                                      verbose_name='производитель')
+    credit = models.ForeignKey(CreditApplication, on_delete=models.CASCADE, related_name='credit',
+                                verbose_name='заявка')
     date = models.DateTimeField(auto_now_add=True, verbose_name='дата создания')
 
     class Meta:

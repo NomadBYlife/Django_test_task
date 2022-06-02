@@ -20,7 +20,7 @@ class ContractAdmin(admin.ModelAdmin):
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
     """Товар"""
-    list_display = ('id', 'title', 'credit', 'manufacturer', 'date')
+    list_display = ('id', 'title', 'manufacturer', 'credit', 'date')
     list_display_links = ('title',)
 
 
