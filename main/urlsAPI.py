@@ -1,4 +1,4 @@
-from django.urls import path, include
+from django.urls import path, include, re_path
 from rest_framework import routers
 
 from .viewsAPI import CreditViewSet, ContractViewSet, ProductViewSet, ManufacturerViewSet
@@ -10,7 +10,9 @@ router.register(r'product', ProductViewSet)
 router.register(r'manufacturer', ManufacturerViewSet)
 
 urlpatterns = [
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('drf-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('auth/', include('djoser.urls')),
+    re_path(r'^auth/', include('djoser.urls.authtoken')),
     path('', include(router.urls)),
 
 
